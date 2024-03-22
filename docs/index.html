@@ -58,12 +58,12 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build.loader.js";
+      var buildUrl = "w2024/Build";
+      var loaderUrl = buildUrl + "/WebGL.loader.js";
       var config = {
-        dataUrl: 'https://s3.amazonaws.com/learnstemct.com/Build.data',
-        frameworkUrl: buildUrl + "/Build.framework.js",
-        codeUrl: buildUrl + "/Build.wasm",
+        dataUrl: buildUrl + "/WebGL.data",
+        frameworkUrl: buildUrl + "/WebGL.framework.js",
+        codeUrl: buildUrl + "/WebGL.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Captain Coder",
         productName: "Crazy Marble",
