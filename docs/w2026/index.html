@@ -44,6 +44,28 @@
       const fullscreenButton = document.querySelector("#unity-fullscreen-button");
       const spinner = document.querySelector('.spinner');
 
+      function resizeCanvas() {
+        const aspectRatio = 16 / 9;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const windowAspect = windowWidth / windowHeight;
+
+        let width, height;
+        if (windowAspect > aspectRatio) {
+          height = windowHeight;
+          width = height * aspectRatio;
+        } else {
+          width = windowWidth;
+          height = width / aspectRatio;
+        }
+
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+      }
+
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
       const canFullscreen = (function() {
         for (const key of [
             'exitFullscreen',
